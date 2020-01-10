@@ -9,8 +9,8 @@ void draw() {
   fill(0,150);
   rect (0,0,580,720);//rect (0,0,600,720); //(0,0,600,555);
   //rect (639,273,600,273);//(0,560,600,200); //2e rectangle onder de analyse 
-  rect(590,298,350,560); //rect(610,265,435,555); //3e rectangle voor de foto rect(610,0,440,555);// 3e rectangle voor de foto rect(610,0,440,555);
-  rect (950,298,233,720);// (980,265,233,560); //3e rectangle for dials // good
+  rect(590,265,360,560); //rect(610,265,435,555); //3e rectangle voor de foto rect(610,0,440,555);// 3e rectangle voor de foto rect(610,0,440,555);
+  rect (960,265,233,720);// (980,265,233,560); //3e rectangle for dials // good
   // rect(1055,265,219,555); //3e rectangle for dials // good
   
   fill(255);
@@ -28,7 +28,7 @@ void draw() {
 
   // DRAAIENDE DONG
   pushMatrix();
-  translate (775, 150);
+  translate (775, 155);
   rotate(frameCount*0.016);
   for (int x = 0; x<radionicsElements.nx; x++) {
     for (int y = 0; y<radionicsElements.ny; y++) {
@@ -154,7 +154,7 @@ void draw() {
   
   if (tile != null) {
     fill(0);
-    rect (590,313,348,460);
+    rect (592,313,420,460);
     tile.drawTile();
     countImage++;
   }
@@ -163,14 +163,14 @@ void draw() {
     if (countImage > 0) {
       tint(255, 255 / photos.size());
     }
-    image (img, 590,315);
+    image (img, 592,315);
     countImage++;
   }
   
   if (photos.size() > 0) {
     fill(66, 214, 47);
     noTint();
-    text("Layers of photos: " + photos.size(), 590,706);
+    text("Layers of photos: " + photos.size(), 592,706);
   }
   
   paintBroadcastedPixel();

@@ -12,7 +12,7 @@ public void controlEvent(ControlEvent theEvent) {
   println("controlEvent " + theEvent.getController().getName()); 
 
   if ("photography".equals(command)) {
-    tile = new  Tile(590, 321, 360, 438, 0);//Tile(630, 50, 400, 400, 0);
+    tile = new  Tile(600, 321, 360, 438, 0);//Tile(630, 50, 400, 400, 0);
     return;
   }
   
@@ -173,7 +173,7 @@ public void controlEvent(ControlEvent theEvent) {
       System.out.println("You chose to open this file: " +
         chooser.getSelectedFile().getName());
       PImage photo = loadImage(chooser.getSelectedFile().getAbsolutePath());
-      photo.resize(590, 321);
+      photo.resize(600, 321);
       photos.add(photo);
     }
     return;
@@ -184,7 +184,7 @@ public void controlEvent(ControlEvent theEvent) {
     PImage photo = getImageFromClipboard();
 
     if (photo != null) {
-      photo.resize(348, 418);
+      photo.resize(355, 418);
       photos.add(photo);
     }
     return;
@@ -314,8 +314,8 @@ public void controlEvent(ControlEvent theEvent) {
     imagePixels.clear();
     broadcastedImagePixels.clear();
 
-    for (int y=316; y<716; y++) {
-      for (int x=590; x<939; x++) {
+    for (int y=316; y<715; y++) {
+      for (int x=595; x<943; x++) {
         color c = get(x, y);
         ImagePixel img = new ImagePixel();
         img.x = x;

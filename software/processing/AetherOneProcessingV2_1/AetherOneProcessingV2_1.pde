@@ -25,8 +25,6 @@ import processing.serial.*;
 import java.util.*;
 import java.lang.reflect.*;
 import java.security.*;
-// Version 3.0
-import net.hydrogen2oxygen.*;
 
 RadionicsElements radionicsElements;
 ArduinoSerialConnection arduinoConnection;
@@ -72,12 +70,8 @@ long getTimeMillis() {
 void setup() {
   //fullScreen();
   size(1285, 721);
-  
-  Test test = new Test();
-  test.sayHello();
-  
   backgroundImage = loadImage ("aetherOneBackground002.jpg"); //("aetherOneBackground001.jpg");
-  surface.setTitle("AetherOne V2.2 - Open Source Radionics");
+  surface.setTitle("AetherOne V2.1 - Open Source Radionics");
   noStroke();
   //noSmooth();
   core = new AetherOneCore();
@@ -109,8 +103,8 @@ void setup() {
     .addButton("rife")
     .addButton("check items")
     .addButton("check file")
-    .addTextField("Input", 71, 10, 508, 20, true)//80, 10, 515, 20, true)
-    .addTextField("Output", 71, 33, 508, 20, false);//80, 40, 515, 20, false);
+    .addTextField("Input", 71, 10, 516, 20, true)//80, 10, 515, 20, true)
+    .addTextField("Output", 71, 33, 516, 20, false);//80, 40, 515, 20, false);
 
   //2th buttons row 
   radionicsElements.startAtX = 1067;
@@ -138,19 +132,19 @@ void setup() {
     .addButtonHorizontal("generate md5")
     .addButtonHorizontal("target");  
 
-  radionicsElements.addSlider("progress", 10, 273, 527, 10, 100);//10, 274, 540, 10, 100);
-  radionicsElements.addSlider("hotbits", 10, 288, 527, 10, 100);//10, 290, 540, 10, 100);
+  radionicsElements.addSlider("progress", 10, 273, 530, 10, 100);//10, 274, 540, 10, 100);
+  radionicsElements.addSlider("hotbits", 10, 288, 530, 10, 100);//10, 290, 540, 10, 100);
 
   // PEGGOTTY 
 
-  radionicsElements.startAtX = 361; //620;
+  radionicsElements.startAtX = 388; //620;
   radionicsElements.startAtY = 107; 
   radionicsElements
-    .initPeggotty (370, 57); //(620, 10) // (726, 10); // was 693 
+    .initPeggotty (388, 57); //(620, 10) // (726, 10); // was 693 
 
   //PEGGOTTY BUTTONS
-  radionicsElements.startAtX = 466; //620;
-  radionicsElements.startAtY = 238; 
+  radionicsElements.startAtX = 472; //620;
+  radionicsElements.startAtY = 240; 
   radionicsElements
     .addButton("Peggotty rate") // generate a peggotty rate and enbed it in the peggotty You can also just put a rate in the peggotty squairs 
     .addButton("clear peggotty");
@@ -170,7 +164,7 @@ void setup() {
     .addButton("potency");
 
   //12 DIALS 
-  int xx = 963;
+  int xx = 970;
   int yy = 321;// 320; //353; //520
   int rCounter = 1;
 
@@ -182,7 +176,7 @@ void setup() {
       rCounter += 1;
     }
 
-    xx = 963;
+    xx = 970;
     yy += 78;
 
     Colors color_gold = new Colors(); //goudkleur dial
@@ -193,10 +187,10 @@ void setup() {
     color_gold.fGreen = 0;
     color_gold.fBlue = 0;
 
-    radionicsElements.startAtX = 1088; //432;
+    radionicsElements.startAtX = 1092; //432;
     radionicsElements.startAtY = 633;//62;
     radionicsElements
-      .addKnob("amplifier", 1088, 635, 35, 0, 360, 0, color_gold);
+      .addKnob("amplifier", 1092, 635, 35, 0, 360, 0, color_gold);
   }
 
   prepareExitHandler ();
