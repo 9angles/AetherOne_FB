@@ -23,7 +23,7 @@ void draw() {
   fill (208, 147, 255);
 
   pushMatrix();
-  translate (736, 155); 
+  translate (765, 155);  // translate (736, 155);
   rotate(frameCount*0.016);
   for (int x = 0; x<radionicsElements.nx; x++) {
     for (int y = 0; y<radionicsElements.ny; y++) {

@@ -209,8 +209,10 @@ void setup() {
     .addButton("energy")
     .addButton("grounding")
     
-    .addTextField("Input", 71, 6, 509, 20, true)   
-    .addTextField("Output", 71, 29, 509, 20, false); 
+    .addTextField("Input", 67, 6, 521, 20, true)   
+    .addTextField("Output", 67, 29, 521, 20, false); 
+  //  .addTextField("Input", 71, 6, 509, 20, true)   
+  //  .addTextField("Output", 71, 29, 509, 20, false); 
 
      //----------2th buttons row 
   radionicsElements.startAtX = 1057;
