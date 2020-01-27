@@ -524,6 +524,34 @@ if ("essences".equals(command)) {
     return;
   }
 
+// AUTOBRODCAST GENERAL
+  if ("autobroadcast".equals(command)) {
+  
+    String manualRate = cp5.get(Textfield.class, "Input").getText();
+    String outputRate = cp5.get(Textfield.class, "Output").getText();
+    String broadcastSignature = manualRate  + outputRate;
+     arduinoConnection.broadcasting = true;
+     String[] lines = loadStrings(selectedDatabase); 
+     //if (selectedDatabase == null) return;
+
+  //---------------
+  // Guid Wang change the GV > 100 to be green <100 to be red autobalance them
+    
+    for (int iRate=0; iRate<rateList.size(); iRate++) { 
+      RateObject rateObject = rateList.get(iRate);
+      
+      if ( (rateObject.gv > (generalVitality+21))) { //if ( (rateObject.gv > (generalVitality+100)) || ( (rateObject.gv < (generalVitality-100))) ) {
+        broadcastSignature += rateObject.rate;
+        println("Broadcst rateObject.gv =" + rateObject.gv + ", rate " + rateObject.rate);
+    cp5.get(Textfield.class, "Output").setText(broadcastSignature);
+    broadcast(broadcastSignature.trim());
+     broadcast(broadcastSignature);  
+    }
+       
+    }
+    return;
+  }
+  
   if ("broadcast image".equals(command)) {
 
     imagePixels.clear();
@@ -861,37 +889,8 @@ if ("lloyd".equals(command)) {    //----------if ("autobroadcast".equals(command
     arduinoConnection.broadcasting = true;
     return;
  }
- 
-    //---------- add Stella tot event if connect
   
-  if ("autobroadcast".equals(command)) {
-
-    String [] signatures = loadStrings(sketchPath() + "/data/LLOYD/LLOYD_MEAR.txt");
-    selectedDatabase = new File(sketchPath() + "/data/LLOYD/LLOYD_MEAR.txt");
-    println(signatures.length);
-    println(core.getRandomNumber(signatures.length));
-   
-    analyseList(signatures);
-    
-    rateList.clear();
-    String autobroadcastSignature = "";
-    
-    for (int i=0; i<19; i++) {
-      RateObject rate = new RateObject();
-      rate.rate = signatures[core.getRandomNumber(signatures.length)];
-      rateList.add(rate);
-      autobroadcastSignature += rate.rate;
-      String[] lines = loadStrings(selectedDatabase);
-      analyseList(lines);
-    }
-
-    cp5.get(Textfield.class, "Output").setText(autobroadcastSignature);
-    arduinoConnection.broadcasting = true;
-    broadcast(autobroadcastSignature);
-    return;
-  }
-
-
+  
    //----------GENERATE rate CODE GENERATE RATE DEZE WERJ WEL de eerste niet
    if ("generate rate".equals(command)) {
      
