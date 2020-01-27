@@ -191,10 +191,12 @@ void setup() {
   radionicsElements.usualHeight = 13;             //----------15;   //----------18;
   radionicsElements    //---------- =========== place of the buttons, here you change the names 
     
-    .addButton("general vitality")
+     .addButton("grounding")
+     .addButton("general vitality")
     .addButton("select data")
     .addButton("analyze")    
     .addButton("broadcast")
+    .addButton("autobroadcast")
     .addButton("stop broadcast")
     .addButton("ommanipadmehum")
     .addButton("univercalsource")
@@ -207,7 +209,7 @@ void setup() {
     .addButton("essences")  
     .addButton("chemical") 
     .addButton("energy")
-    .addButton("grounding")
+   
     
     .addTextField("Input", 67, 6, 521, 20, true)   
     .addTextField("Output", 67, 29, 521, 20, false); 
